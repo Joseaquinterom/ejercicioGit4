@@ -1,14 +1,16 @@
 /**
  * @Author: José Antonio Quintero Maya
  */
+
 import java.util.Date;
+
 /**
  * @Author: Andrés Fernández Pereira
  */
 class Empleado {
-    String nombre;
+    final String nombre;
     int edad;
-    Date fechaContratacion;
+    final Date fechaContratacion;
 
     public Empleado(String nombre, int edad, Date fechaContratacion) {
         this.nombre = nombre;
