@@ -12,4 +12,9 @@ class Empleado {
             this.nombre = name;
             this.birthDate = birthDate;
         }
+
+    @Override
+    public String toString() {
+        return "Empleado: " + nombre + " (nacido en 19" + birthDate.getYear() + ")";
+    }
 }
