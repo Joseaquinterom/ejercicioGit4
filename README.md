@@ -1,3 +1,5 @@
+# EjercicioGit4
+
 José Antonio Quintero Maya
 
 Grupo: DAM
@@ -29,9 +31,11 @@ Grupo: DAM
 	
     ![carpetas iniciales](img/5.png)
 	
+	```bash
     git status
     git add .
     git commit -m "proyecto base hola mundo"
+	 ```
 	
 - Una vez que realizamos el **commit lo puseamos a nuestro repositorio remoto**
 	  
