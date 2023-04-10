@@ -31,20 +31,20 @@ Grupo: DAM
 	
     ![carpetas iniciales](img/5.png)
 	
-	```bash
+```bash
     git status
     git add .
     git commit -m "proyecto base hola mundo"
-	 ```
+```
 	
 - Una vez que realizamos el **commit lo puseamos a nuestro repositorio remoto**
 	  
     ![carpetas iniciales](img/6.png)
 		
-	```bash
+```bash
      git remote add origin https://github.com/Joseaquinterom/ejercicioGit4.git
      git push -u origin master
-	  ```
+```
 	 
 6. Clonamos el proyecto dentro de **Ordenador2** y lo abrimos.
 	
@@ -52,9 +52,9 @@ Grupo: DAM
 	
     ![carpetas iniciales](img/7.png)
 	
-	```bash
+```bash
     git clone https://github.com/Joseaquinterom/ejercicioGit4.git
-	```
+```
 	
 7. Creamos una nueva funcionalidad, para lo cual creamos una rama "feat_persona" y la desarrollamos (ver mi log de commits). Una vez lista subimos la rama (```git push feat_persona```). Después, nos movemos a master para hacer un merge de "feat_persona" **localmente**. Al no haber nuevos commits en master, el merge debería ser automático y sin conflictos. Después del merge, hacemos un push de master con los nuevos cambios añadidos.	
 	
@@ -64,10 +64,10 @@ Grupo: DAM
 	
    ![carpetas iniciales](img/8.png)
    
-   ```bash
+```bash
     git branch feat_persona
 	git checkout feat_persona
-	```
+```
 	
 	  Segundo paso:
 	  
@@ -76,19 +76,19 @@ Grupo: DAM
 	
      ![carpetas iniciales](img/9.png)
 	
-	```bash
+```bash
      git status
      git add .
      git commit -m "probando un objeto Persona"
-	 ```
+```
 	 
 - Nos queda subir la rama feat_persona
     
     ![carpetas iniciales](img/10.png)
 		
-	```bash
+```bash
     git push --set-upstream origin feat_persona
-	 ```
+```
 	
 	   Tercer paso:
     
@@ -96,10 +96,10 @@ Grupo: DAM
 	  
      ![carpetas iniciales](img/11.png)
 		
-	```bash
+```bash
      git checkout master
      git merge feat_persona
-	``` 
+``` 
 	 
 	  - Ahora nos queda hacer un push, para subirlo a remoto:
 	 
@@ -117,11 +117,11 @@ Grupo: DAM
 	
    ![carpetas iniciales](img/13.png)
 	
-	```bash
+```bash
     git status
     git log - para ver los commits en la rama correspondiente
     git fetch - Para comprobar los cambios realizados
-	```
+```
 	
 	9. Para poder seguir trabajando desde **Ordenador1**, deberíamos hacer antes de nada un pull para traernos el nuevo commit que tiene master en remoto. Sin embargo, vamos a probar qué sucedería si nos olvidamos de ello.
  
@@ -135,10 +135,10 @@ Grupo: DAM
 	
    ![carpetas iniciales](img/14.png)
 	
-	```bash
+```bash
    git branch feat_empleado o git checkout -b feat_empleado
    git checkout feat_empleado 
-   ```
+```
    
     Durante el desarrollo, antes de hacer el primer commit en feat_empleado, detectamos que el fichero .idea/workspace.xml cambia automáticamente a menudo al abrir el proyecto en IntelliJ (es un archivo de metadatos de proyecto de IntelliJ).
 	
@@ -152,12 +152,12 @@ Grupo: DAM
 		
  ![carpetas iniciales](img/16.png)
 		
-		```bash
+```bash
 	git status
 	git add .
 	git commit -m "añadido workspace.xml a gitignore"
 	git rm --cached .idea/workspace.xml
-     ```
+```
 	
   Tercer paso:
    
@@ -177,19 +177,19 @@ Grupo: DAM
 	
   ![carpetas iniciales](img/18.png)
 		
-	```bash
+```bash
    git status
    git add .
    git commit -m "encapsulando toString de Empleado"
-   ```
+```
    
    - Por último nos queda subir la rama **feat_empleado**
 	 
    ![carpetas iniciales](img/19.png)
 		
-	```bash
+```bash
    git push --set-upstream origin feat_empleado
-   ```
+```
    
         - Vemos todas las ramas que tenemos:
 	
@@ -207,26 +207,26 @@ Grupo: DAM
 
    ![carpetas iniciales](img/21.png)
 	
-	```bash
+```bash
    git checkout master
    git push
-   ```
+```
    
    Podríamos hacer un pull, que implicaría un merge de la rama remota a la rama local, como ya hemos visto, pero para hacerlo bien, vamos a eliminar los nuevos  commits de master (siguen en feat_empleado, así que no se pierden). Para ello, usamos un ```git reset --hard``` desde master, volviendo al último commit común al  master remoto.
   
   ![carpetas iniciales](img/22.png)
 	
-	```bash
+```bash
    git reset --hard
-   ```  
+```  
    
     Ahora sí podemos hacer un pull de master sin conflicto.
     
    ![carpetas iniciales](img/23.png)
 		
-	```bash
+```bash
    git pull
-    ```  
+```  
    
    Hacemos merge de la nueva rama local feat_empleado. Ahora sí tendremos conflicto.
 
@@ -238,9 +238,9 @@ Grupo: DAM
 			
   ![carpetas iniciales](img/24.png)
 		
-	```bash
+```bash
    git merge feat_empleado
-    ```  
+```  
    
    Terminamos el merge con add, commit y hacemos un push.
 		
@@ -248,30 +248,30 @@ Grupo: DAM
     
     ![carpetas iniciales](img/25.png)
 		
-	```bash
+```bash
     git status
     git add .
     git commit -m "Merge remote-tracking branch 'origin/feat_empleado'"
     git push
-	```  
+```  
 	   
 11. Volvemos a Ordenador2 y comprobamos si tenemos todo al día con ```git status``` y ```git log```. Si no nos indica que el master local está por detrás del remoto, será necesario hacer un ```git fetch```, que ahora nos indicará que debemos hacer un pull.
 
  ![carpetas iniciales](img/26.png)
 	
-	```bash
+```bash
    git status
    git log
    git fetch
-   ```  
+```  
    
    - Conprobamos que hay un conflicto al intentar hacer un **git pull**: (para descargar los cambios de remoto a local)
  
  ![carpetas iniciales](img/27.png)
 		
-	```bash  
+```bash  
   git pull
-  ```  
+```  
   
   - Lo solucionamos haciendo un **git reset --hard**: (Con esto vuelve al último commit)
 		
@@ -279,15 +279,15 @@ Grupo: DAM
 		
 ```bash
  git reset --hard
- ```  
+```  
  
  - Ahora si nos deja hacer **git pull**
   
   ![carpetas iniciales](img/29.png)
   
-  ```bash
+```bash
  git pull
- ```
+```
  
  12. Ahora vamos a simular cómo se desarrollaría en paralelo en varias ramas (distintas personas). No crearemos carpetas que simulen ordenadores pero cada rama representará el trabajo independiente de cada componente del equipo de trabajo.
 
@@ -302,15 +302,15 @@ Grupo: DAM
 ```bash		
   git branch feat_inmutable_fields
   git branch bug_edad_negativa
-  ```
+```
   
     - Me cambio de rama **feat_inmutable_fields**:
 		
   ![carpetas iniciales](img/31.png)
 		
-		```bash
+```bash
    git checkout feat_inmutable_fields
-   ```
+```
    
    Edito el Main.java
   - Hago el commit **diseñamos las pruebas de esta funcionalidad**:
@@ -321,7 +321,7 @@ Grupo: DAM
    git status
    git add .
    git commit "diseñamos las pruebas de esta funcionalidad"
-  ```
+```
   
    - Edito **Empleado.java** y **Main.java**
    - Añado el commit **ahora hay dos campos inmutables**:
@@ -332,7 +332,7 @@ Grupo: DAM
    git status
    git add .
    git commit "ahora hay dos campos inmutables"
-  ```
+```
   
    - Ahora subo la rama a remoto:
      
@@ -340,7 +340,7 @@ Grupo: DAM
 	
 ```bash	
    git push --set-upstream origin feat_inmutable_fields
-   ```
+```
    
    "bug_edad_negativa", para garantizar que la edad de un empleado no pueda ser negativa.
    
@@ -350,7 +350,7 @@ Grupo: DAM
 		
 ```bash		
   git checkout bug_edad_negativa
-    ```
+```
 	
   - Edito el Main.java para mostar una prueba de error y lo comiteo:
     
@@ -366,11 +366,11 @@ Grupo: DAM
     
    ![carpetas iniciales](img/37.png)		
 
-   ```bash
+```bash
    git status
    git add .
    git commit -m "information hidding: edad es solo modificable a través de un setter"
-      ```	  
+```	  
 	  
   - En el siguiente paso edito el Main.java, Empleado.java y lo commiteo:
      
@@ -380,7 +380,7 @@ Grupo: DAM
    git status
    git add .
    git commit -m "resuelto"
-   ```
+```
    
    - Lo que realizo ahora es un push para subirlo a remoto:
   
@@ -388,7 +388,7 @@ Grupo: DAM
 		
 ```bash		
  git push --set-upstream origin bug_edad_negativa
- ```
+```
  
 - Una vez desarrolladas, hacemos el merge de ambas ramas a master solventando conflictos.
 		
@@ -402,7 +402,7 @@ Grupo: DAM
  git checkout master
  git merge feat_inmutable_fields
  git push
- ```
+```
  
   d. Hacemos un merge con **bug_edad_negativa**:
   
@@ -410,25 +410,25 @@ Grupo: DAM
 	
 ```bash	
  git merge bug_edad_negativa
- ```
+```
  
   e. Comprobamos que tenemos un conficto al hacer merge, nos toca solucionarlo. Editamos **Main.java**, **Empleado.java** y lo comiteamos:
   
   ![carpetas iniciales](img/42.png)
 				
-   ```bash
+```bash
    git status
    git add .
    git commit -m "Merge branch 'bug_edad_negativa'"
-   ```
+```
       
    - Ahora realizo un push para subirlo a remoto:
    
    ![carpetas iniciales](img/43.png)
    
-   ```bash
+```bash
    git push
-   ```
+```
    
    13. Realizamos otras mejoras en la rama feat_pojo para **mostar el problema**, **los campos son privados y se accede mediante getters**, y los mergeamos.
    
@@ -436,20 +436,20 @@ Grupo: DAM
   
   ![carpetas iniciales](img/44.png)
  
- ```bash
+```bash
   git branch feat_pojo
   git checkout feat_pojo
-  ```
+```
   
    b. Modifico **Main.java** y hago el commit
   
   ![carpetas iniciales](img/45.png)
 	
-	```bash	
+```bash	
   git status
   git add .
   git commit -m "mostrando el problema"
-  ```
+```
   
   c. Modifico **Main.java**, **Empleado.Java** y hago el commit
   (los campos ahora son privados y se acceden mediante getters)
@@ -460,25 +460,25 @@ Grupo: DAM
    git status
    git add .
    git commit -m "los campos son privados y se accede mediante getters"
-   ```
+```
    
    - Realizo un push para que se suba a remoto:
    
    ![carpetas iniciales](img/47.png)
 		
-		```bash
+```bash
    git push --set-upstream origin feat_pojo
-   ```
+```
    
    - Me cambio a la rama Master, mergeo y realizo push:
   
   ![carpetas iniciales](img/48.png)
 		
-		```bash
+```bash
    git checkout master
    git merge feat_pojo
    git push
-   ```
+```
    
    Realizo otras mejoras en la rama **bug_deprecated_data_type** para solucionar los problemas de la librería obsoleta java.util.Date, y los mergeamos.
    
@@ -486,10 +486,10 @@ Grupo: DAM
   
   ![carpetas iniciales](img/49.png)
 		
-		```bash
+```bash
   git branch bug_deprecated_data_type
   git checkout bug_deprecated_data_type
-  ```
+```
   
    - b. Modifico **Main.java** y realizo el commit:
    
@@ -499,7 +499,7 @@ Grupo: DAM
    git status
    git add .
    git commit -m "bug_deprecated_data_type"
-      ```
+```
 	  
    - c. Modifico **Main.java**, **Empleado.Java** y lo comiteo:
   
@@ -509,14 +509,14 @@ Grupo: DAM
   git status
   git add .
   git commit -m "migrado a LocalDate"
-  ```
+```
   - Subo a remoto esta rama:
   
   ![carpetas iniciales](img/52.png)
 	
 ```bash	
    git push --set-upstream origin bug_deprecated_data_type
-   ```
+```
    
   - Ahora me cambio a la rama Master, lo mergeo y realizo el push:
   
@@ -526,4 +526,4 @@ Grupo: DAM
   git checkout master   
   git merge bug_deprecated_data_type  
   git push
-  ```
+```
