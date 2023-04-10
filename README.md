@@ -245,8 +245,8 @@ Solventamos los conflictos (en Main.java) y como realmente se está abordando la
    
    Terminamos el merge con add, commit y hacemos un push.
 Editamos el Main.java, solventamos los confictos, añadimos el commit y también el push:
-    
-    ![carpetas iniciales](img/25.png)
+   ![carpetas iniciales](img/25.png)
+     
 		
 ```bash
     git status
