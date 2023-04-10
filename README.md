@@ -92,18 +92,32 @@ Grupo: DAM
 	
 	   Tercer paso:
     
-    - Nos cambiamos a la rama **master**, hacemos un **merge** 
+    - Nos cambiamos a la rama Master y mergeamos:
 	  
      ![carpetas iniciales](img/11.png)
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 		
 ```bash
      git checkout master
      git merge feat_persona
 ``` 
+
+
+
+
 	 
 	  - Ahora nos queda hacer un push, para subirlo a remoto:
 	 
      ![carpetas iniciales](img/12.png)
+	 
+	 
+	 
 
 ```bash
     git push
@@ -244,7 +258,7 @@ Grupo: DAM
    
    Terminamos el merge con add, commit y hacemos un push.
 		
-    - Editamos el Main.java y solventamos los confictos, añadimos el commit **Merge remote-tracking branch 'origin/feat_empleado'**; también el push:
+    Editamos el Main.java, solventamos los confictos, añadimos el commit y también el push:
     
     ![carpetas iniciales](img/25.png)
 		
