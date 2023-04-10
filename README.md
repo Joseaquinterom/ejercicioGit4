@@ -11,7 +11,7 @@ Grupo: DAM
 	 
 2. Creamos un repositorio vacío (sin README ni gitignore) en GitHub.
 	
-    ![carpetas iniciales](img/2.jpg)
+    ![carpetas iniciales](img/2.png)
 	
 3. Creamos un proyecto de IntelliJ en **Ordenador1** con repositorio de Git y código de ejemplo.
 	
@@ -162,15 +162,15 @@ Grupo: DAM
 		
    git push --set-upstream origin feat_empleado
    
-        4. Vemos todas las ramas que tenemos.
+        - Vemos todas las ramas que tenemos.
 	
-    ![carpetas iniciales](img/20.png)
+   ![carpetas iniciales](img/20.png)
 
     git branch -a
 	
 	feat_persona solo debería estar en remoto, ya que es una rama que no se ha usado en este "ordenador".
 	
-	5. Hacemos un checkout a master para mergear. Al hacer el push detectamos que hay un conflicto. Hemos olvidado de descargarnos los cambios que habíamos hecho en el otro ordenador y que tenemos subidos a GitHub.
+	- Hacemos un checkout a master para mergear. Al hacer el push detectamos que hay un conflicto. Hemos olvidado de descargarnos los cambios que habíamos hecho en el otro ordenador y que tenemos subidos a GitHub.
 		
 - Nos cambiamos a la rama master y hacemos un push "Nos da error porque no hicimos un pull para descargar los cambios en remoto a local, ahora tenemos conflicto con los nuevos cambios"
 
@@ -350,7 +350,7 @@ Solventamos los conflictos (en Main.java) y como realmente se está abordando la
    
    - Ahora realizo un push para subirlo a remoto:
    
-    ![carpetas iniciales](img/43.png)
+   ![carpetas iniciales](img/43.png)
    
    git push
    
@@ -405,7 +405,7 @@ Solventamos los conflictos (en Main.java) y como realmente se está abordando la
   
    - b. Modifico **Main.java** y realizo el commit:
    
-   ![carpetas iniciales](img/50.png
+   ![carpetas iniciales](img/50.png)
 			
    git status
    git add .
@@ -430,5 +430,7 @@ Solventamos los conflictos (en Main.java) y como realmente se está abordando la
   ![carpetas iniciales](img/53.png)
 			
   git checkout master
+  
   git merge bug_deprecated_data_type
+  
   git push
